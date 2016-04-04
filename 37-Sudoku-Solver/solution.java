@@ -13,8 +13,8 @@ public class Solution {
                   if(helper(board, i, j+1)) 
                      return true;
              }
-             board[i][j]='.';
           }
+           board[i][j]='.';
        }else{
           return helper(board, i,j+1);   
        }
