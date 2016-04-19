@@ -21,7 +21,7 @@ public class Solution {
                    for(int s : right){
                        switch(ch){
                            case '+':
-                               res.add(s + t);
+                               res.add(t + s);
                                break;
                                
                            case '-':
@@ -29,7 +29,7 @@ public class Solution {
                                break;
                                
                            case '*':
-                              res.add(s * t);
+                              res.add(t * s);
                               break;
                               
                        }
