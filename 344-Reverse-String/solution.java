@@ -8,5 +8,6 @@ public class Solution {
         sb.append(s);
         
         return sb.reverse().toString();
+        
     }
 }
