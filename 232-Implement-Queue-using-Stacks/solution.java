@@ -23,8 +23,11 @@ class MyQueue {
           if(outStack.empty()){
               this.inStacktooutStack();
           }
-          
-          outStack.pop();
+          if(outStack.empty()){
+              return;
+          }else{
+              outStack.pop();
+          }
     }
 
     // Get the front element.
@@ -33,7 +36,11 @@ class MyQueue {
             this.inStacktooutStack();
         }
         
-        return outStack.peek();
+        if(outStack.empty()){
+            return 0;
+        }else{
+           return outStack.peek(); 
+        }
     }
 
     // Return whether the queue is empty.
