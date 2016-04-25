@@ -7,10 +7,6 @@ public class Solution {
             return false;
         }
         
-        if(n == 1){
-            return true;
-        }
-        
         double res = Math.log(n) / Math.log(3);
         
         return Math.abs(Math.round(res) - res) < eps;
