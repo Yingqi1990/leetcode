@@ -8,7 +8,7 @@ public class Solution {
             sums[i] = sums[i - 1] + nums[i - 1];
         }
         
-        for(int i = 0; i < len + 1; i++){
+        for(int i = 0; i < len; i++){
             int right = searchRight(i+1, len, sums[i] + s ,sums);
             
             if(right == len + 1){
