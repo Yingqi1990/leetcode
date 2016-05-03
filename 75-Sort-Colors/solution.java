@@ -6,24 +6,24 @@ public class Solution {
         
         int left = 0;
         int right = nums.length - 1;
-        
         int cur = 0;
         
         while(cur <= right){
             if(nums[cur] == 0){
-                int temp = nums[left];
-                nums[left] = nums[cur];
-                nums[cur] = temp;
-                left++;
+                int temp = nums[cur];
+                nums[cur] = nums[left];
+                nums[left] = temp;
                 cur++;
+                left++;
             }else if(nums[cur] == 1){
                 cur++;
             }else{
-                int temp = nums[right];
-                nums[right] = nums[cur];
-                nums[cur] = temp;
+                int temp = nums[cur];
+                nums[cur] = nums[right];
+                nums[right] = temp;
                 right--;
             }
         }
+        
     }
 }
