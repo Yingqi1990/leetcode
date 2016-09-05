@@ -9,42 +9,40 @@ public class Solution {
         }
         
         if(b == null){
-            return a; 
+            return a;
         }
         
         String result = "";
         
         if(a.length() < b.length()){
-            String tmp = b;
-            b = a;
-            a = tmp;
+            String tmp = a;
+            a = b;
+            b = tmp;
         }
         
-        int i = a.length() - 1;
-        int j = b.length() - 1;
-        
+        int index_a = a.length() - 1;
+        int index_b = b.length() - 1;
         int carry = 0;
         
-        while(j >= 0){
-            int sum = (int)(a.charAt(i) - '0') + (int)(b.charAt(j) - '0') + carry;
+        while(index_b >= 0){
+            int sum = (int)(a.charAt(index_a) - '0') + (int)(b.charAt(index_b) - '0') + carry;
             result = String.valueOf(sum % 2) + result;
             carry = sum / 2;
-            i--;
-            j--;
+            index_a--;
+            index_b--;
         }
         
-        while(i >= 0){
-            int sum = (int)(a.charAt(i) - '0') + carry;
+        while(index_a >=0){
+            int sum = (int)(a.charAt(index_a) - '0') + carry;
             result = String.valueOf(sum % 2) + result;
             carry = sum / 2;
-            i-- ;
+            index_a--;
         }
         
-        if(carry != 0 ){
-            result = "1" + result;
+        if(carry != 0){
+            result = '1' + result;
         }
         
         return result;
-        
     }
 }
