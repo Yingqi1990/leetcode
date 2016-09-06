@@ -1,11 +1,13 @@
 public class Solution {
     public List<String> restoreIpAddresses(String s) {
         List<String> res = new ArrayList<String>();
-        if(s == null && s.length() == 0){
-            return res;
+        
+        if(s == null || s.length() < 4){
+            return res; 
         }
         
         String subset = "";
+        
         helper(res, s, 0, 1, subset);
         
         return res;
@@ -18,6 +20,7 @@ public class Solution {
         
         if(segment == 4){
             String temp = s.substring(index, s.length());
+            
             if(isValid(temp)){
                 res.add(subset + "." + temp);
             }
@@ -27,6 +30,7 @@ public class Solution {
         
         for(int i = 1; (i <= 4) && (index + i <= s.length()); i++){
             String temp = s.substring(index, index + i);
+            
             if(isValid(temp)){
                 if(segment == 1){
                     helper(res, s, index + i, segment + 1, subset + temp);
@@ -50,13 +54,13 @@ public class Solution {
         
         int num = Integer.parseInt(temp);
         
-        if(num >=0 && num <= 255){
+        if(num >= 0 && num <= 255){
             return true;
         }
         
         return false;
+        
     }
-    
     
     
 }
